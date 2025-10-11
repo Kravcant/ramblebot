@@ -40,6 +40,18 @@ public class LowercaseSentenceTokenizer implements Tokenizer {
           tokens.add(str);
         }
         tokens.add(".");
+      } else if (next.endsWith(",") && (next.indexOf(",") == next.length() - 1)) {
+        String str = next.substring(0, next.length() - 1);
+        if (!str.isEmpty()) {
+          tokens.add(str);
+        }
+        tokens.add(",");
+      } else if (next.endsWith("?") && (next.indexOf("?") == next.length() - 1)) {
+        String str = next.substring(0, next.length() - 1);
+        if (!str.isEmpty()) {
+          tokens.add(str);
+        }
+        tokens.add("?");
       } else {
         tokens.add(next);
       }
