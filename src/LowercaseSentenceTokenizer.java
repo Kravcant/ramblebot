@@ -34,19 +34,19 @@ public class LowercaseSentenceTokenizer implements Tokenizer {
     List<String> tokens = new ArrayList<>();
     while (scanner.hasNext()) {
       String next = scanner.next().toLowerCase();
-      if (next.endsWith(".") && (next.indexOf(".") == next.length() - 1)) {
+      if (next.endsWith(".")) {
         String str = next.substring(0, next.length() - 1);
         if (!str.isEmpty()) {
           tokens.add(str);
         }
         tokens.add(".");
-      } else if (next.endsWith(",") && (next.indexOf(",") == next.length() - 1)) {
+      } else if (next.endsWith(",")) {
         String str = next.substring(0, next.length() - 1);
         if (!str.isEmpty()) {
           tokens.add(str);
         }
         tokens.add(",");
-      } else if (next.endsWith("?") && (next.indexOf("?") == next.length() - 1)) {
+      } else if (next.endsWith("?")) {
         String str = next.substring(0, next.length() - 1);
         if (!str.isEmpty()) {
           tokens.add(str);
